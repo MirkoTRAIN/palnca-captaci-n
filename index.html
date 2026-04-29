@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Captación — Guión comercial TrainingGym</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-50:#EAF3DE;--green-200:#97C459;--green-600:#3B6D11;--green-800:#27500A;
+    --amber-50:#FAEEDA;--amber-400:#BA7517;--amber-800:#633806;
+    --gray-50:#F8F7F4;--gray-100:#EFEFEB;--gray-400:#888780;--gray-800:#2C2C2A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--gray-50);color:var(--gray-800);line-height:1.6;}
+  header{background:var(--green-800);color:white;padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+  header::before{content:'';position:absolute;top:-60px;right:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,0.04);}
+  .header-inner{max-width:800px;margin:0 auto;position:relative;}
+  .header-tag{display:inline-block;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.8);font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:1rem;}
+  header h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:400;line-height:1.15;margin-bottom:.75rem;}
+  header p{font-size:15px;color:rgba(255,255,255,0.7);max-width:480px;}
+  .result-pill{display:inline-flex;align-items:center;gap:6px;background:var(--green-200);color:var(--green-800);font-size:12px;font-weight:500;padding:5px 12px;border-radius:20px;margin-top:1.25rem;}
+  .result-pill::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green-800);}
+  main{max-width:800px;margin:0 auto;padding:2.5rem 2rem;}
+  .intro{background:white;border:1px solid var(--gray-100);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:2.5rem;display:flex;gap:12px;align-items:flex-start;}
+  .intro-icon{width:32px;height:32px;background:var(--amber-50);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;margin-top:2px;}
+  .intro p{font-size:14px;color:var(--gray-400);line-height:1.6;}
+  .intro strong{color:var(--gray-800);font-weight:500;}
+  .wow-block{margin-bottom:3rem;}
+  .wow-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:1.25rem;}
+  .wow-number{width:36px;height:36px;border-radius:50%;background:var(--green-800);color:white;font-family:'DM Serif Display',serif;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+  .wow-meta{flex:1;}
+  .wow-name{font-size:18px;font-weight:500;color:var(--gray-800);margin-bottom:3px;}
+  .wow-path{font-size:12px;color:var(--gray-400);font-family:monospace;}
+  .device-tags{display:flex;gap:6px;margin-top:6px;}
+  .tag{font-size:10px;font-weight:500;padding:2px 8px;border-radius:20px;}
+  .tag-web{background:#E6F1FB;color:#0C447C;}
+  .tag-app{background:#EEEDFE;color:#3C3489;}
+  .video-buttons{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem;}
+  .btn-video{display:inline-flex;align-items:center;gap:7px;background:var(--green-800);color:white;border:none;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .15s;white-space:nowrap;text-decoration:none;}
+  .btn-video:hover{background:var(--green-600);}
+  .btn-video svg{width:14px;height:14px;flex-shrink:0;}
+  .btn-video-app{display:inline-flex;align-items:center;gap:7px;background:#EEEDFE;color:#3C3489;border:none;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .15s;white-space:nowrap;text-decoration:none;}
+  .btn-video-app:hover{background:#CECBF6;}
+  .btn-video-app svg{width:14px;height:14px;flex-shrink:0;}
+  .section-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--gray-400);margin-bottom:8px;padding-left:2px;}
+  .steps-card{background:white;border:1px solid var(--gray-100);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;}
+  .steps-list{list-style:none;}
+  .step-item{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--gray-100);font-size:13.5px;color:#444;align-items:flex-start;}
+  .step-item:last-child{border-bottom:none;}
+  .step-dot{width:6px;height:6px;border-radius:50%;background:var(--green-200);flex-shrink:0;margin-top:7px;}
+  .wow-moment{display:flex;align-items:flex-start;gap:8px;background:var(--amber-50);border-radius:10px;padding:10px 14px;margin-bottom:1rem;font-size:13px;color:var(--amber-800);font-weight:500;}
+  .wow-moment::before{content:'★';font-size:14px;color:var(--amber-400);flex-shrink:0;margin-top:1px;}
+  .script-card{background:white;border:1px solid var(--gray-100);border-radius:14px;overflow:hidden;}
+  .script-tab-bar{display:flex;border-bottom:1px solid var(--gray-100);background:var(--gray-50);}
+  .script-tab{padding:10px 16px;font-size:12px;font-weight:500;color:var(--gray-400);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;background:none;border-top:none;border-left:none;border-right:none;}
+  .script-tab.active{color:var(--green-800);border-bottom-color:var(--green-200);background:white;}
+  .script-body{padding:1.25rem 1.5rem;}
+  .script-panel{display:none;}
+  .script-panel.active{display:block;}
+  .dialogue{margin-bottom:1rem;}
+  .dialogue-role{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+  .role-agent{color:var(--green-600);}
+  .role-client{color:var(--gray-400);}
+  .dialogue-bubble{padding:10px 14px;font-size:13.5px;line-height:1.6;}
+  .bubble-agent{background:var(--green-50);color:var(--green-800);border-radius:0 12px 12px 12px;}
+  .bubble-client{background:var(--gray-100);color:var(--gray-800);border-radius:12px 12px 12px 0;}
+  .objection-block{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--gray-100);}
+  .objection-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:#D85A30;margin-bottom:8px;}
+  .divider{height:1px;background:var(--gray-100);margin:2.5rem 0;}
+
+  .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;padding:1.5rem;}
+  .modal-overlay.open{display:flex;}
+  .modal-box{background:#111;border-radius:14px;overflow:hidden;width:100%;max-width:900px;}
+  .modal-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#1a1a1a;}
+  .modal-title{font-size:13px;font-weight:500;color:rgba(255,255,255,0.8);}
+  .modal-close{background:none;border:none;color:rgba(255,255,255,0.6);cursor:pointer;font-size:22px;line-height:1;padding:2px 8px;border-radius:6px;}
+  .modal-close:hover{background:rgba(255,255,255,0.1);color:white;}
+  .modal-iframe-wrap{position:relative;padding-bottom:56.25%;height:0;}
+  .modal-iframe-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+
+  footer{text-align:center;padding:2rem;font-size:12px;color:var(--gray-400);border-top:1px solid var(--gray-100);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-tag">Guión comercial</div>
+    <h1>Palanca de captación</h1>
+    <p>Guía de navegación y guión para demostrar cómo TrainingGym ayuda a los gimnasios a atraer nuevos socios.</p>
+    <div class="result-pill">Resultado esperado: +10% crecimiento neto</div>
+  </div>
+</header>
+
+<main>
+  <div class="intro">
+    <div class="intro-icon">💡</div>
+    <p><strong>Cómo usar esta guía:</strong> Cada momento wow tiene su vídeo de navegación real, los pasos a seguir y un guión con apertura, desarrollo y objeciones. Haz clic en "Ver navegación" para ver la demo antes de reproducirla con el cliente.</p>
+  </div>
+
+  <!-- WOW 1 -->
+  <div class="wow-block">
+    <div class="wow-header">
+      <div class="wow-number">1</div>
+      <div class="wow-meta">
+        <div class="wow-name">Posicionamiento digital</div>
+        <div class="wow-path">Marketing → Redes sociales → Analítica</div>
+        <div class="device-tags"><span class="tag tag-web">web manager</span></div>
+      </div>
+    </div>
+    <div class="video-buttons">
+      <button class="btn-video" onclick="openModal('m1','https://www.loom.com/embed/1704cf6edfc34c30b91880d5115550d7','Posicionamiento digital — navegación real')">
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm-1 4.5l4 2.5-4 2.5V5.5z"/></svg>
+        Ver navegación
+      </button>
+    </div>
+    <div class="section-label">Pasos de la demo</div>
+    <div class="steps-card">
+      <ul class="steps-list">
+        <li class="step-item"><div class="step-dot"></div>Entrar en Marketing → Redes sociales</li>
+        <li class="step-item"><div class="step-dot"></div>Analítica → Web: métricas de página, visitas y visitantes en rango de fechas</li>
+        <li class="step-item"><div class="step-dot"></div>Analítica por canal: Facebook, Instagram, TikTok, YouTube — crecimiento de seguidores</li>
+        <li class="step-item"><div class="step-dot"></div>Resumen posts: interacciones totales consolidadas por red social</li>
+        <li class="step-item"><div class="step-dot"></div>Inbox unificado: mensajes y comentarios de todas las redes en un solo lugar</li>
+        <li class="step-item"><div class="step-dot"></div>Anuncios: campañas Meta Ads + Google Ads con presupuesto, impresiones y clics</li>
+      </ul>
+    </div>
+    <div class="wow-moment">El momento wow: el cliente ve que puede gestionar todas sus redes, contestar mensajes y ver el rendimiento de sus anuncios desde un único panel</div>
+    <div class="section-label">Guión comercial</div>
+    <div class="script-card">
+      <div class="script-tab-bar">
+        <button class="script-tab active" onclick="switchTab(this,'p1a')">Apertura</button>
+        <button class="script-tab" onclick="switchTab(this,'p1b')">Durante la demo</button>
+        <button class="script-tab" onclick="switchTab(this,'p1c')">Objeciones</button>
+      </div>
+      <div class="script-body">
+        <div class="script-panel active" id="p1a">
+          <div class="dialogue"><div class="dialogue-role role-agent">Agente</div><div class="dialogue-bubble bubble-agent">"Antes de entrar en el software, dime: ¿cómo estás atrayendo nuevos socios ahora mismo? ¿Qué está funcionando y qué no?"</div></div>
+          <div class="dialogue"><div class="dialogue-role role-client">Cliente</div><div class="dialogue-bubble bubble-client">"Tenemos Instagram, hacemos algún anuncio de vez en cuando, pero no sabemos muy bien si funciona."</div></div>
+          <div class="dialogue"><div class="dialogue-role role-agent">Agente</div><div class="dialogue-bubble bubble-agent">"Eso es muy común. El problema no es que no hagáis cosas — es que no tenéis en un solo sitio el dato que os dice qué está funcionando. ¿Te muestro cómo lo resuelve TrainingGym?"</div></div>
+        </div>
+        <div class="script-panel" id="p1b">
+          <div class="dialogue"><div class="dialogue-role role-agent">Agente — al entrar en Analítica Web</div><div class="dialogue-bubble bubble-agent">"Aquí tienes el tráfico de tu página web. Cuánta gente entra, desde dónde viene, en qué días hay más actividad. En tiempo real o por periodos que tú eliges."</div></div>
+          <div class="dialogue"><div class="dialogue-role role-agent">Agente — al mostrar el Inbox</div><div class="dialogue-bubble bubble-agent">"Ahora mira esto. Todos los mensajes de Instagram, Facebook, YouTube y TikTok en una sola bandeja. Sin abrir cuatro apps. ¿Cuánto tiempo pierdes ahora en eso?"</div></div>
+          <div class="dialogue"><div class="dialogue-role role-agent">Agente — al mostrar Anuncios</div><div class="dialogue-bubble bubble-agent">"Y aquí puedes ver cuánto te está costando cada clic y cada conversión, tanto de Meta como de Google. Todo en el mismo sitio donde gestionas el resto del gimnasio."</div></div>
+        </div>
+        <div class="script-panel" id="p1c">
+          <div class="objection-block"><div class="objection-label">Objeción: "Ya tenemos a alguien que nos lleva las redes"</div><div class="dialogue"><div class="dialogue-bubble bubble-agent">"Perfecto, entonces esto le viene genial a esa persona. Todo centralizado, sin ir red por red. Y tú, como dueño, puedes ver los resultados sin depender de que te los cuente alguien."</div></div></div>
+          <div class="objection-block"><div class="objection-label">Objeción: "No tenemos presupuesto para publicidad"</div><div class="dialogue"><div class="dialogue-bubble bubble-agent">"No hace falta. El inbox unificado y las analíticas orgánicas funcionan sin invertir un euro en anuncios. Cuando quieras crecer con paid, ya tienes la infraestructura lista."</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- WOW 2 -->
+  <div class="wow-block">
+    <div class="wow-header">
+      <div class="wow-number">2</div>
+      <div class="wow-meta">
+        <div class="wow-name">Página web propia</div>
+        <div class="wow-path">Marketing → Página Web</div>
+        <div class="device-tags"><span class="tag tag-web">web manager</span></div>
+      </div>
+    </div>
+    <div class="video-buttons">
+      <button class="btn-video" onclick="openModal('m2','https://www.loom.com/embed/741ed82a644f46feba2caa2f5817a453','Página web propia — navegación real')">
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm-1 4.5l4 2.5-4 2.5V5.5z"/></svg>
+        Ver navegación
+      </button>
+    </div>
+    <div class="section-label">Pasos de la demo</div>
+    <div class="steps-card">
+      <ul class="steps-list">
+        <li class="step-item"><div class="step-dot"></div>Marketing → Página Web → Configuración: activar web, dirección, nombre, logo, colores</li>
+        <li class="step-item"><div class="step-dot"></div>Administración Cabecera Web: configurar menú público (Inicio, Horario, Tarifas, Contacto, Login, Registro)</li>
+        <li class="step-item"><div class="step-dot"></div>Clic en "Ver Web" → web real del gimnasio en vivo con la marca configurada</li>
+        <li class="step-item"><div class="step-dot"></div>Sección Tarifas: cards de productos sincronizados automáticamente desde el manager</li>
+      </ul>
+    </div>
+    <div class="wow-moment">El momento wow: el cliente ve su gimnasio con una web profesional en vivo, con su nombre, sus colores y sus tarifas reales — todo generado desde el mismo sistema</div>
+    <div class="section-label">Guión comercial</div>
+    <div class="script-card">
+      <div class="script-tab-bar">
+        <button class="script-tab active" onclick="switchTab(this,'p2a')">Apertura</button>
+        <button class="script-tab" onclick="switchTab(this,'p2b')">Durante la demo</button>
+        <button class="script-tab" onclick="switchTab(this,'p2c')">Objeciones</button>
+      </div>
+      <div class="script-body">
+        <div class="script-panel active" id="p2a">
+          <div class="dialogue"><div class="dialogue-role role-agent">Agente</div><div class="dialogue-bubble bubble-agent">"¿Tienes página web ahora mismo? ¿Y cuando un cliente nuevo te busca en Google, qué encuentra?"</div></div>
+          <div class="dialogue"><div class="dialogue-role role-client">Cliente</div><div class="dialogue-bubble bubble-client">"Tenemos algo, pero está bastante desactualizada. Las tarifas han cambiado y no hemos podido actualizarla."</div></div>
+          <div class="dialogue"><div class="dialogue-role role-agent">Agente</div><div class="dialogue-bubble bubble-agent">"Eso lo vamos a resolver ahora mismo. Te muestro cómo TrainingGym genera tu web desde el sistema — y cuando cambias una tarifa en el manager, la web se actualiza sola."</div></div>
+        </div>
+        <div class="script-panel" id="p2b">
+          <div class="dialogue"><div class="dialogue-role role-agent">Agente — en Configuración</div><div class="dialogue-bubble bubble-agent">"Aquí pones tu dirección web, subes tu logo, eliges los colores de tu marca. Tres minutos y ya tienes la identidad configurada."</div></div>
+          <div class="dialogue"><div class="dialogue-role role-agent">Agente — al hacer clic en "Ver Web"</div><div class="dialogue-bubble bubble-agent">"Ahora mira. Esto es la web de tu gimnasio, en vivo, con tu nombre y tus tarifas reales. Sin tocar una línea de código. ¿Qué te parece?"</div></div>
+          <div class="dialogue"><div class="dialogue-role role-agent">Agente — en la sección Tarifas</div><div class="dialogue-bubble bubble-agent">"Y esto es lo más importante: estas tarifas vienen directamente del manager. Cuando cambies un precio ahí, aquí se actualiza automáticamente."</div></div>
+        </div>
+        <div class="script-panel" id="p2c">
+          <div class="objection-block"><div class="objection-label">Objeción: "Ya tenemos una web con otra empresa"</div><div class="dialogue"><div class="dialogue-bubble bubble-agent">"Puedes mantenerla si quieres. Pero la ventaja de esta es que las tarifas, el horario y el registro están conectados con el manager. No tienes que actualizar dos sitios. ¿Cuánto te cuesta ahora la web?"</div></div></div>
+          <div class="objection-block"><div class="objection-label">Objeción: "¿Puedo personalizar el diseño?"</div><div class="dialogue"><div class="dialogue-bubble bubble-agent">"Puedes configurar logo, colores, menú y el contenido de cada sección. Para una personalización más avanzada tenemos opciones que te explico al hablar de tarifas."</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- WOW 3 -->
+  <div class="wow-block">
+    <div class="wow-header">
+      <div class="wow-number">3</div>
+      <div class="wow-meta">
+        <div class="wow-name">Sistema de referidos y club de premios</div>
+        <div class="wow-path">Rewards → Configuración / App móvil del socio</div>
+        <div class="device-tags">
+          <span class="tag tag-web">web manager</span>
+          <span class="tag tag-app">app móvil</span>
+        </div>
+      </div>
+    </div>
+    <div class="video-buttons">
+      <button class="btn-video" onclick="openModal('m3a','https://www.loom.com/embed/ade357e577e941a8a504317f113492e9','Sistema de referidos — configuración en el manager')">
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm-1 4.5l4 2.5-4 2.5V5.5z"/></svg>
+        Ver navegación — manager
+      </button>
+      <button class="btn-video-app" onclick="openModal('m3b','https://www.loom.com/embed/9b358bf73e8747a0be725e04e8d7a1ef','Club de premios — experiencia en la app')">
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm-1 4.5l4 2.5-4 2.5V5.5z"/></svg>
+        Ver navegación — app
+      </button>
+    </div>
+    <div class="section-label">Pasos de la demo — manager</div>
+    <div class="steps-card">
+      <ul class="steps-list">
+        <li class="step-item"><div class="step-dot"></div>Rewards → Configuración → Puntos: activar programa embajador, definir puntos por prueba y por alta</li>
+        <li class="step-item"><div class="step-dot"></div>Rewards → Recompensas: crear catálogo de premios canjeables con imagen y puntos necesarios</li>
+        <li class="step-item"><div class="step-dot"></div>Rewards → Empleados: ranking de empleados con sus puntos acumulados</li>
+        <li class="step-item"><div class="step-dot"></div>Rewards → Historial: registro de canjes entregados por socio y fecha</li>
+      </ul>
+    </div>
+    <div class="section-label" style="margin-top:1rem;">Pasos de la demo — app del socio</div>
+    <div class="steps-card">
+      <ul class="steps-list">
+        <li class="step-item"><div class="step-dot"></div>Home de la app: tarjeta "Club de Premios" con saldo de puntos disponibles</li>
+        <li class="step-item"><div class="step-dot"></div>Club de Premios: catálogo de recompensas + sección "Invita y gana" con las reglas</li>
+        <li class="step-item"><div class="step-dot"></div>Clic en "Compartir invitación" → enlace personalizado listo para enviar por WhatsApp</li>
+        <li class="step-item"><div class="step-dot"></div>Histórico: +2 pts por acceso al centro, +2 pts por actividad validada — acumulación automática</li>
+        <li class="step-item"><div class="step-dot"></div>Catálogo completo: premios propios y colaboraciones externas con estado disponible / sin stock</li>
+      </ul>
+    </div>
+    <div class="wow-moment">El momento wow: el socio genera su enlace personalizado de referido y lo manda a un amigo por WhatsApp en un solo clic — el dueño del gimnasio ve en vivo cómo funciona la captación automática</div>
+    <div class="section-label">Guión comercial</div>
+    <div class="script-card">
+      <div class="script-tab-bar">
+        <button class="script-tab active" onclick="switchTab(this,'p3a')">Apertura</button>
+        <button class="script-tab" onclick="switchTab(this,'p3b')">Durante la demo</button>
+        <button class="script-tab" onclick="switchTab(this,'p3c')">Objeciones</button>
+      </div>
+      <div class="script-body">
+        <div class="script-panel active" id="p3a">
+          <div class="dialogue"><div class="dialogue-role role-agent">Agente</div><div class="dialogue-bubble bubble-agent">"¿Cuál es la fuente número uno de nuevos socios en tu gimnasio ahora mismo?"</div></div>
+          <div class="dialogue"><div class="dialogue-role role-client">Cliente</div><div class="dialogue-bubble bubble-client">"El boca a boca, sin duda. Casi todo viene por recomendación."</div></div>
+          <div class="dialogue"><div class="dialogue-role role-agent">Agente</div><div class="dialogue-bubble bubble-agent">"Entonces lo que te voy a mostrar te va a encantar. Vamos a sistematizar ese boca a boca para que no dependa de que el socio se acuerde de recomendarte — el sistema le da un motivo y le facilita hacerlo en dos clics."</div></div>
+        </div>
+        <div class="script-panel" id="p3b">
+          <div class="dialogue"><div class="dialogue-role role-agent">Agente — en Configuración de Puntos</div><div class="dialogue-bubble bubble-agent">"Aquí defines las reglas: si un socio trae a un amigo a probar, gana 15 puntos. Si ese amigo se da de alta, gana 30 más. Tú decides los números."</div></div>
+          <div class="dialogue"><div class="dialogue-role role-agent">Agente — mostrando la app</div><div class="dialogue-bubble bubble-agent">"Ahora mira desde el móvil del socio. Ve en su home cuántos puntos tiene y qué puede canjear. Y aquí, 'Compartir invitación' — un clic y ya tiene su enlace para mandar por WhatsApp."</div></div>
+          <div class="dialogue"><div class="dialogue-role role-agent">Agente — mostrando el histórico</div><div class="dialogue-bubble bubble-agent">"Y cada vez que entra al gimnasio o valida una actividad, suma puntos automáticamente. Sin que nadie haga nada. El socio ve cómo crece su saldo y tiene motivos para seguir viniendo."</div></div>
+        </div>
+        <div class="script-panel" id="p3c">
+          <div class="objection-block"><div class="objection-label">Objeción: "¿Y si los socios no usan la app?"</div><div class="dialogue"><div class="dialogue-bubble bubble-agent">"La adopción suele dispararse cuando ven el Club de Premios. La gamificación es uno de los drivers de descarga más potentes. Y el programa funciona aunque no todos usen la app."</div></div></div>
+          <div class="objection-block"><div class="objection-label">Objeción: "¿Qué premios tengo que ofrecer?"</div><div class="dialogue"><div class="dialogue-bubble bubble-agent">"Lo que tú quieras. Desde servicios de tu propio centro — fisioterapia, un mes gratis — hasta colaboraciones con negocios del barrio. Tú decides qué tiene valor para tus socios y cuántos puntos cuesta."</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>TrainingGym · Guión comercial — Palanca de captación · Generado para el equipo Supersonic</footer>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="m1" onclick="closeOnOverlay(event,'m1')">
+  <div class="modal-box">
+    <div class="modal-header"><span class="modal-title" id="m1-title"></span><button class="modal-close" onclick="closeModal('m1')">×</button></div>
+    <div class="modal-iframe-wrap"><iframe id="m1-iframe" allowfullscreen></iframe></div>
+  </div>
+</div>
+<div class="modal-overlay" id="m2" onclick="closeOnOverlay(event,'m2')">
+  <div class="modal-box">
+    <div class="modal-header"><span class="modal-title" id="m2-title"></span><button class="modal-close" onclick="closeModal('m2')">×</button></div>
+    <div class="modal-iframe-wrap"><iframe id="m2-iframe" allowfullscreen></iframe></div>
+  </div>
+</div>
+<div class="modal-overlay" id="m3a" onclick="closeOnOverlay(event,'m3a')">
+  <div class="modal-box">
+    <div class="modal-header"><span class="modal-title" id="m3a-title"></span><button class="modal-close" onclick="closeModal('m3a')">×</button></div>
+    <div class="modal-iframe-wrap"><iframe id="m3a-iframe" allowfullscreen></iframe></div>
+  </div>
+</div>
+<div class="modal-overlay" id="m3b" onclick="closeOnOverlay(event,'m3b')">
+  <div class="modal-box">
+    <div class="modal-header"><span class="modal-title" id="m3b-title"></span><button class="modal-close" onclick="closeModal('m3b')">×</button></div>
+    <div class="modal-iframe-wrap"><iframe id="m3b-iframe" allowfullscreen></iframe></div>
+  </div>
+</div>
+
+<script>
+function switchTab(btn, panelId) {
+  const card = btn.closest('.script-card');
+  card.querySelectorAll('.script-tab').forEach(t => t.classList.remove('active'));
+  card.querySelectorAll('.script-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  card.querySelector('#' + panelId).classList.add('active');
+}
+function openModal(id, src, title) {
+  document.getElementById(id + '-title').textContent = title;
+  document.getElementById(id + '-iframe').src = src;
+  document.getElementById(id).classList.add('open');
+}
+function closeModal(id) {
+  document.getElementById(id + '-iframe').src = '';
+  document.getElementById(id).classList.remove('open');
+}
+function closeOnOverlay(e, id) {
+  if (e.target === document.getElementById(id)) closeModal(id);
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+});
+</script>
+</body>
+</html>
